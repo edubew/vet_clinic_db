@@ -133,6 +133,6 @@ I would like to thank @Microverse for the great articles on this topic
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/edubew/vet_clinic_db/blob/dev/LICENSE) licensed.
+This project is [MIT](https://github.com/edubew/mit/blob/dev/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
