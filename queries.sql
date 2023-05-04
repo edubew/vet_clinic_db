@@ -15,6 +15,7 @@ UPDATE animals
 SET species = 'unspecified';
 SELECT name FROM animals WHERE species = 'unspecified';
 ROLLBACK;
+SELECT * FROM animals;
 
 BEGIN;
 UPDATE animals
@@ -25,12 +26,15 @@ UPDATE animals
 SET species = 'pokemon'
 WHERE species IS NULL;
 
+SELECT * FROM animals;
 COMMIT;
 SELECT * FROM animals;
 
 -- Query to delete, restore and update data in animals table inside transactions
 BEGIN;
 DELETE FROM animals;
+SELECT * FROM animals;
+
 ROLLBACK;
 SELECT * FROM animals;
 
