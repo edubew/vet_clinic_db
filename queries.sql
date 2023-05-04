@@ -9,18 +9,13 @@ SELECT name, neutered FROM animals WHERE neutered = TRUE;
 SELECT name FROM animals WHERE NOT (name = 'Gabumon');
 SELECT name, weight_kg FROM animals WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
 
--- Transaction1 starts
+-- Query to update animals table inside transactions
 BEGIN;
-
 UPDATE animals
 SET species = 'unspecified';
-
 SELECT name FROM animals WHERE species = 'unspecified';
-
 ROLLBACK;
--- Transaction1 ends
 
--- Transaction 2 starts
 BEGIN;
 UPDATE animals
 SET species = 'digimon'
@@ -32,4 +27,23 @@ WHERE species IS NULL;
 
 COMMIT;
 SELECT * FROM animals;
--- Transaction 2 ends
+
+-- Query to delete, restore and update data in animals table inside transactions
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SAVEPOINT reboot;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+
+ROLLBACK TO reboot;
+
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+
+COMMIT;
