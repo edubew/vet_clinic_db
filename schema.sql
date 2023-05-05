@@ -24,3 +24,13 @@ CREATE TABLE species (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(50)
 );
+
+-- Modify animals table
+ALTER TABLE animals
+DROP COLUMN species;
+
+ALTER TABLE animals
+ADD species_id INT REFERENCES species(id);
+
+ALTER TABLE animals
+ADD owner_id INT REFERENCES owners(id);
