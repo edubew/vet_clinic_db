@@ -42,4 +42,13 @@ CREATE TABLE vets (
     age INT,
     date_of_graduation DATE
 );
+
+-- Create a join table for the specializations
+CREATE TABLE specializations (
+    species_id INT,
+    vet_id INT,
+    PRIMARY KEY (species_id, vet_id),
+    FOREIGN KEY (species_id) REFERENCES species(id),
+    FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
    
