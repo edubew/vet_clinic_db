@@ -11,3 +11,16 @@ CREATE TABLE animals (
 
 ALTER TABLE animals
 ADD species VARCHAR(50);
+
+-- Owners table
+CREATE TABLE owners (
+    id BIGSERIAL PRIMARY KEY,
+    full_name VARCHAR(100),
+    age INT
+);
+
+-- Species table
+CREATE TABLE species (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
