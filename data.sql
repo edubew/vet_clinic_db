@@ -98,3 +98,22 @@ INSERT INTO animals (
     weight_kg
 )
 VALUES ('Ditto', '2022-05-14', 4, TRUE, '22');
+
+-- Insert data into owners table
+INSERT INTO owners (full_name, age)
+VALUES('Sam Smith', 34);
+
+INSERT INTO owners (full_name, age)
+VALUES('Jeniffer Orwell', 19);
+
+INSERT INTO owners (full_name, age)
+VALUES('Bob', 45);
+
+INSERT INTO owners (full_name, age)
+VALUES('Melody Pond', 77);
+
+INSERT INTO owners (full_name, age)
+VALUES('Dean Winchester', 14);
+
+INSERT INTO owners (full_name, age)
+VALUES('Jodie Whittaker', 38);
