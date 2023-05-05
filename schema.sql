@@ -34,3 +34,12 @@ ADD species_id INT REFERENCES species(id);
 
 ALTER TABLE animals
 ADD owner_id INT REFERENCES owners(id);
+
+-- Create a table for the vets
+CREATE TABLE vets (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    age INT,
+    date_of_graduation DATE
+);
+   
