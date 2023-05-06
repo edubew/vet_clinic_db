@@ -2,7 +2,7 @@
 
 CREATE TABLE animals (
     id BIGSERIAL PRIMARY KEY,
-    name VARCHAR(50),
+    name VARCHAR(255),
     date_of_birth DATE,
     escape_attempts INT,
     neutered BOOLEAN,
@@ -15,14 +15,14 @@ ADD species VARCHAR(50);
 -- Owners table
 CREATE TABLE owners (
     id BIGSERIAL PRIMARY KEY,
-    full_name VARCHAR(100),
+    full_name NVARCHAR(255),
     age INT
 );
 
 -- Species table
 CREATE TABLE species (
     id BIGSERIAL PRIMARY KEY,
-    name VARCHAR(50)
+    name NVARCHAR(255)
 );
 
 -- Modify animals table
